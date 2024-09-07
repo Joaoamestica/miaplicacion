@@ -40,3 +40,49 @@
 .read-the-docs {
   color: #888;
 }
+
+
+.product-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center; /* Center items horizontally */
+}
+
+.product-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  width: 250px; /* Adjusted width for consistency */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Added shadow for better separation */
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 15px; /* Space between image and text */
+}
+
+.product-card h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
+}
+
+.product-card p {
+  margin: 0 0 15px 0;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.product-card a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.product-card a:hover {
+  text-decoration: underline;
+}
