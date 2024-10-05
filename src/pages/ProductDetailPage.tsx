@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { IProduct } from '../interfaces/IProduct';
+import AddToCartButton from '../components/Buttons/AddToCartButton';
 
 export default function ProductDetailPage() {
 
@@ -53,6 +54,7 @@ export default function ProductDetailPage() {
         <p>Price: ${product?.price}</p>
         <p>{product?.description}</p>
       </div>
+      <AddToCartButton product= {product}></AddToCartButton>
     </div>
 
     </>

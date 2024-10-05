@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { IProduct } from '../interfaces/IProduct';
 import { Link } from 'react-router-dom';
+import AddToCartButton from '../components/Buttons/AddToCartButton';
 
 export default function CatalogPage() {
 
@@ -39,6 +40,7 @@ export default function CatalogPage() {
             <h3>{product.title}</h3>
             <p>Price: ${product.price}</p>
             <Link to={`/catalog/product/${product.id}`}> Ver detalle</Link>
+            <AddToCartButton product= {product}></AddToCartButton>
           </div>
         ))}
       </div>
