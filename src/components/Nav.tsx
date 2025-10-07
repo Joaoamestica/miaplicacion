@@ -16,6 +16,7 @@ export default function Nav() {
               <li><Link to="/catalog">Catalogo</Link></li>
               <li><Link to="/about">Quienes somos</Link></li>
               <li><Link to="/contact">Contacto</Link></li>
+              <li><Link to="/carrito">Carrito de compras</Link></li>
           </ul>
       </nav>
       <div>

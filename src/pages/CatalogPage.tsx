@@ -16,16 +16,24 @@ export default function CatalogPage() {
         if(!response.ok){
           console.log('No pudimos obtener los productos');
         }
+        console.log('response limpio: ', response);
         const productsJson = await response.json();
-        console.log(productsJson) 
         setProducts(productsJson);
+        console.log('response json: ', productsJson);
 
       } catch (error) {
         console.log('Error al obtener los productos');
       }
     }
 
-    getProducts();
+    //getProducts();
+
+
+    fetch('https://fakestoreapi.com/products')
+      .then(res=>res.json())
+      .then(json=>setProducts(json))
+      .catch(err => console.log('Error al obtener los productos: ', err));
+
   }, []);
 
 
@@ -44,10 +52,6 @@ export default function CatalogPage() {
           </div>
         ))}
       </div>
-
-
     </>
-
-
   )
 }
