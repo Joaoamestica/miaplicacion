@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { IProduct } from '../interfaces/IProduct';
 import { Link } from 'react-router-dom';
 import AddToCartButton from '../components/Buttons/AddToCartButton';
+import axios from 'axios';
 
 export default function CatalogPage() {
 
@@ -9,29 +10,21 @@ export default function CatalogPage() {
 
   useEffect(() => {
 
-    async function getProducts(){
-      try {
-        const response = await fetch('https://fakestoreapi.com/products');
-
-        if(!response.ok){
-          console.log('No pudimos obtener los productos');
-        }
-        console.log('response limpio: ', response);
-        const productsJson = await response.json();
-        setProducts(productsJson);
-        console.log('response json: ', productsJson);
-
-      } catch (error) {
-        console.log('Error al obtener los productos');
-      }
-    }
-
-    //getProducts();
+    
 
 
-    fetch('https://fakestoreapi.com/products')
-      .then(res=>res.json())
-      .then(json=>setProducts(json))
+    // fetch('https://fakestoreapi.com/products')
+    //   .then(res=>res.json())
+    //   .then(json=>setProducts(json))
+    //   .then(() => console.log('Productos obtenidos correctamente'))
+    //   .then(() => console.log(products))
+    //   .catch(err => console.log('Error al obtener los productos: ', err));
+
+
+    axios.get('https://fakestoreapi.com/products')
+      .then(response => {
+        setProducts(response.data);
+      })
       .catch(err => console.log('Error al obtener los productos: ', err));
 
   }, []);
